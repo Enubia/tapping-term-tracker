@@ -1,0 +1,126 @@
+.char {
+    display: inline-block;
+    font-family: monospace;
+    transition: all 0.1s;
+    margin-right: 0.05em;
+}
+
+.char:has(+ .char-space),
+.char-space {
+    margin-right: 0.4em;
+}
+
+.char-current {
+    position: relative;
+}
+
+.char-current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4f46e5;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.char-correct {
+    color: #10b981;
+}
+
+.char-incorrect {
+    color: #ef4444;
+    text-decoration: underline;
+}
+
+.char-upcoming {
+    color: #6b7280;
+}
+
+/* Light mode */
+.stats-card {
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode */
+.bg-gray-900 .stats-card {
+    background: #1f2937;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#typing-area {
+    outline: 2px solid transparent;
+    transition: outline 0.2s, background-color 0.3s, color 0.3s;
+    letter-spacing: 0.05em;
+    word-spacing: 0.5em;
+    background-color: white;
+}
+
+.bg-gray-900 #typing-area {
+    background-color: #1f2937;
+}
+
+#typing-area:focus {
+    outline: 2px solid #4f46e5;
+}
+
+input[type="number"] {
+    max-width: 60px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 2px 6px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.bg-gray-900 input[type="number"] {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: white;
+}
+
+input[type="number"]:focus {
+    outline: 2px solid #4f46e5;
+    border-color: transparent;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[disabled] {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+}
+
+.bg-gray-900 input[disabled] {
+    background-color: #374151;
+    opacity: 0.6;
+}
+
+/* Dark mode adaptation for container */
+.bg-gray-900 .bg-white {
+    background-color: #1f2937;
+}
