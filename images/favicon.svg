@@ -1,0 +1,18 @@
+<!-- Save this as favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Key background -->
+  <rect x="2" y="5" width="28" height="22" rx="3" ry="3" fill="#4f46e5" />
+  
+  <!-- Key top face -->
+  <rect x="4" y="7" width="24" height="18" rx="2" ry="2" fill="#ffffff" />
+  
+  <!-- Timing indicator (clock/timer element) -->
+  <circle cx="16" cy="16" r="7" fill="none" stroke="#4f46e5" stroke-width="2" />
+  
+  <!-- Clock hand -->
+  <line x1="16" y1="16" x2="16" y2="11" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" />
+  <line x1="16" y1="16" x2="19" y2="19" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- "T" for Tapping Term -->
+  <!-- <text x="16" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#4f46e5">T</text> -->
+</svg>
