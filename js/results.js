@@ -8,9 +8,36 @@ class ResultsManager {
         this.keyStatsDisplay = document.getElementById('key-stats');
         this.restartBtn = document.getElementById('restart-btn');
         
+        // New elements for tapping term recommendations
+        this.conservativeTermDisplay = document.getElementById('conservativeTermValue');
+        this.balancedTermDisplay = document.getElementById('balancedTermValue');
+        this.aggressiveTermDisplay = document.getElementById('aggressiveTermValue');
+        
         this.restartBtn.addEventListener('click', () => {
             this.typingTest.reset();
         });
+    }
+
+    /**
+     * Calculate and display recommended tapping terms
+     * @param {Map} keyAvgTimes - Map of key codes to average press times
+     * @param {number} avgTime - Overall average key press time
+     */
+    updateRecommendedTappingTerms(keyAvgTimes, avgTime) {
+        // Calculate recommendations with different buffers
+        // Conservative: adds 150ms buffer to account for latency and variation
+        const conservativeTerm = Math.round(avgTime + 100);
+        
+        // Balanced: adds 100ms buffer, good middle ground
+        const balancedTerm = Math.round(avgTime + 50);
+        
+        // Aggressive: adds only 50ms buffer for faster response
+        const aggressiveTerm = Math.round(avgTime + 25);
+        
+        // Update the UI
+        this.conservativeTermDisplay.textContent = conservativeTerm;
+        this.balancedTermDisplay.textContent = balancedTerm;
+        this.aggressiveTermDisplay.textContent = aggressiveTerm;
     }
 
     /**
@@ -37,6 +64,9 @@ class ResultsManager {
                 keyAvgTimes.set(keyCode, avgKeyTime);
             }
         });
+
+        // Update the tapping term recommendations
+        this.updateRecommendedTappingTerms(keyAvgTimes, avgTime);
 
         // Sort keys by average time (slowest to fastest)
         const sortedKeys = Array.from(keyAvgTimes.keys()).sort((a, b) => {

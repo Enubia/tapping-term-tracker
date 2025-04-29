@@ -88,6 +88,21 @@
                 </div>
             </div>
 
+            <div class="stats-card p-4 mb-4">
+                <h3 class="text-lg font-medium mb-2">Recommended Tapping Term</h3>
+                <p>Based on your typing patterns:</p>
+                <div class="mt-2">
+                    <p><span class="font-medium">Conservative setting:</span> <span id="conservativeTermValue" class="font-bold">0</span> ms</p>
+                    <p><span class="font-medium">Balanced setting:</span> <span id="balancedTermValue" class="font-bold">0</span> ms</p>
+                    <p><span class="font-medium">Aggressive setting:</span> <span id="aggressiveTermValue" class="font-bold">0</span> ms</p>
+                </div>
+                <div class="mt-3 text-xs text-gray-600 dark:text-gray-400">
+                    <p><strong>Conservative:</strong> Prioritizes hold actions, adds more buffer to avoid accidental taps.</p>
+                    <p><strong>Balanced:</strong> Recommended for most users, good compromise between taps and holds.</p>
+                    <p><strong>Aggressive:</strong> Prioritizes tap actions, shorter delay before registering holds.</p>
+                </div>
+            </div>
+
             <div class="stats-card p-4">
                 <h3 class="text-lg font-medium mb-2">Key-specific Statistics</h3>
                 <div id="key-stats" class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm"></div>
