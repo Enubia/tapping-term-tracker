@@ -22,7 +22,7 @@ In QMK/ZMK firmware, the "tapping term" is the maximum time allowed between pres
 
 ## Usage
 
-1. Visit the website (or run it locally)
+1. Visit [the website](https://enubia.github.io/tapping-term-tracker/) (or run it locally)
 2. Set your desired word count (20-200 words)
 3. Click on the text area and type the displayed text
 4. Review your results, focusing on keys with longer press times
